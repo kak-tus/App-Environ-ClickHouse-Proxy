@@ -1,6 +1,6 @@
 package App::Environ::ClickHouse::Proxy;
 
-our $VERSION = '0.3';
+our $VERSION = '0.4';
 
 use strict;
 use warnings;
@@ -70,7 +70,7 @@ sub send {
     version => 1,
   );
 
-  $self->{sock}->send( $JSON->encode( \%val ) ) or warn "Send error: $!\n";
+  $self->{sock}->send( $JSON->encode( \%val ) ) or warn "Send error";
 
   return;
 }
